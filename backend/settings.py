@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Aquí irán tus aplicaciones propias (ej. 'tienda' o 'productos')
+    'productos', 
 ]
 
 MIDDLEWARE = [
@@ -45,6 +46,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls' # Apunta al archivo urls.py que crearemos
+
+# =======================================================
+# CONFIGURACIÓN DE BASE DE DATOS (DATABASES)
+# =======================================================
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # <-- Motor de Base de Datos
+        'NAME': BASE_DIR / 'db.sqlite3',       # Ruta del archivo de la DB
+    }
+}
 
 # =======================================================
 # CONFIGURACIÓN DE PLANTILLAS (TEMPLATES)

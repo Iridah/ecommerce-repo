@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Inicio - Vaca's Store{% endblock %}
+
+{% block content %}
+<main>
+    <div class="p-5 mb-4 bg-light rounded-3 text-center shadow-sm">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Bienvenido a Vaca's Store</h1>
+            <p class="col-md-8 fs-4 mx-auto">Tu portafolio de proyectos de desarrollo web y automatización. Descubre los mejores servicios para tu negocio.</p>
+            <a class="btn btn-primary btn-lg mt-3" href="{% url 'product_list' %}" role="button">
+                <i class="fas fa-search"></i> Ver Catálogo Ahora
+            </a>
+        </div>
+    </div>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                <h3>Desarrollo Limpio</h3>
+                <p>Proyectos basados en Python, Django y las mejores prácticas de código.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-rocket fa-3x text-success mb-3"></i>
+                <h3>Diseño Moderno</h3>
+                <p>Interfaces rápidas y responsivas gracias al uso de Bootstrap 5.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-lock fa-3x text-danger mb-3"></i>
+                <h3>Seguridad</h3>
+                <p>Estructura robusta y segura desde el *backend* con Django.</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

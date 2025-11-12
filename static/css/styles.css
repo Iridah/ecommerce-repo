@@ -1,0 +1,56 @@
+/* ========================================================== */
+/* 1. DEFINICIÓN DE VARIABLES (Para Colores Institucionales) */
+/* ========================================================== */
+:root {
+    /* Tipografía */
+    --font-principal: 'Roboto', sans-serif;
+    --font-footer: 'Jura', sans-serif; /* Nueva variable para la fuente específica del footer */
+
+    /* Colores Institucionales (Ejemplos) */
+    --color-institucional-primario: #007bff; 
+    --color-institucional-secundario: #6c757d; 
+    --color-fondo-oscuro: #000000;
+}
+
+/* ========================================================== */
+/* 2. ESTILOS GLOBALES Y ARREGLOS DE TIPOGRAFÍA */
+/* ========================================================== */
+body {
+    /* Mueve el estilo 'body' desde el HTML aquí */
+    font-family: var(--font-principal), sans-serif;
+}
+
+/* ------------------------------------------- */
+/* 3. FOOTER PERSONALIZADO Y CORREGIDO         */
+/* ------------------------------------------- */
+
+/* Estilo de la etiqueta footer: usa la variable de color */
+footer {
+    background-color: var(--color-fondo-oscuro) !important; /* Usamos !important para ser seguros */
+    padding: 15px 0;
+}
+
+/* Estilo del texto del footer: ahora con la clase CSS */
+footer p.footer__texto {
+    color: white; 
+    font-family: var(--font-footer); /* Uso de la variable Jura */
+    text-align: center;
+    margin: 0; 
+    font-size: 0.9em;
+}
+
+/* ========================================================== */
+/* 4. CLASES PERSONALIZADAS PARA BOOTSTRAP (Transición de color) */
+/* ========================================================== */
+
+/* Ejemplo: Clase para usar en el NavBar en lugar de bg-dark */
+.bg-institucional-dark {
+    background-color: var(--color-institucional-secundario) !important;
+}
+
+/* Ejemplo: Botón primario institucional (cuando cambie el azul por defecto de Bootstrap) */
+.btn-institucional-primary {
+    background-color: var(--color-institucional-primario) !important;
+    border-color: var(--color-institucional-primario) !important;
+    color: white;
+}

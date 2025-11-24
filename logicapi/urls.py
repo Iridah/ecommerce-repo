@@ -1,6 +1,9 @@
 # logicapi/urls.py
 from django.urls import path
-from . import views
+# from . import views  <-- Eliminamos la importación relativa problemática
+
+import logicapi.views as views # <-- Importamos el módulo de vistas usando el nombre de la app (logicapi)
+                                #     Esto resuelve la referencia estática para el linter.
 
 urlpatterns = [
     # 1. Obtener el Catálogo y Carrito

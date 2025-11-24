@@ -1,14 +1,10 @@
-from django.shortcuts import render
-
-# Create your views here.
-
-# api/views.py
+# # logicapi/views.py
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 
 # Importa la lógica de Python
-from .logic import get_catalogo, get_carrito, calcular_total, agregar_al_carrito, vaciar_carrito 
+from .logic import get_catalogo, get_carrito, calcular_total, agregar_al_carrito, vaciar_carrito as logic_vaciar_carrito
 
 # Decorador para permitir peticiones POST sin el token CSRF (solo para API simple)
 @csrf_exempt 
@@ -50,6 +46,6 @@ def agregar_producto(request):
 def vaciar_carrito(request):
     """Endpoint POST: Vacía el carrito."""
     if request.method == 'POST':
-        vaciar_carrito()
+        logic_vaciar_carrito() # <--- ¡Llamada corregida y explícita!
         return JsonResponse({'success': True, 'message': 'Carrito vaciado.'})
     return JsonResponse({'error': 'Método no permitido'}, status=405)

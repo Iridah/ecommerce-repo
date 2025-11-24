@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Aquí irán tus aplicaciones propias (ej. 'tienda' o 'productos')
-    'productos', 
+    'productos.apps.ProductosConfig',
+    'logicapi.apps.LogicapiConfig',
 ]
 
 MIDDLEWARE = [

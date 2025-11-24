@@ -1,24 +1,26 @@
 # backend/urls.py
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import TemplateView 
+# NOTA: Si views.home y views.product_list están en la app 'backend', 
+# la línea 'from . import views' es correcta.
 from . import views 
 
-# Cambié la variable urlsPatterns a urlpatterns, que es la convención estándar
 urlpatterns = [
     path('admin/', admin.site.urls), 
 
-    # RUTA DE INICIO
+    # RUTA 1: INICIO (Landing Page - Asumo que usa templates/index.html)
     path('', views.home, name='home'), 
     
-    # RUTA DEL CATÁLOGO (Listado)
-    path('productos/', views.product_list, name='product_list'), 
+    # RUTA 2: CATÁLOGO FUNCIONAL (Donde corre el JavaScript y la API)
+    # Servirá el template product_list.html (con el nuevo contenido)
+    path('productos/', TemplateView.as_view(template_name='product_list.html'), name='product_list'), 
     
-    # RUTA DEL DETALLE (FINAL)
-    # Esta ruta captura un entero llamado 'product_id'
+    # RUTA 3: DETALLE DE PRODUCTO (Si aún quieres mantenerla)
     path('productos/<int:product_id>/', views.product_detail, name='product_detail'), 
     
-    # PLACEHOLDERS
-    # path('carrito/', views.product_list, name='cart'), 
-    # path('login/', views.product_list, name='login'),
+    # RUTA CRUCIAL 4: CONEXIÓN CON LA API
+    # Redirige todo el tráfico que empieza con /api/ a la aplicación logicapi
+    path('api/', include('logicapi.urls')), # <--- ¡ESTO CONECTA EL JS CON PYTHON!
 ]

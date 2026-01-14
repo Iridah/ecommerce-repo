@@ -1,10 +1,10 @@
--- 1. Insertar Categorías (Mínimo 3 [cite: 37])
+-- 1. Insertar Categorías (Mínimo 3)
 INSERT INTO categorias (nombre) VALUES 
 ('Electrónica'), 
 ('Hogar'), 
 ('Ropa');
 
--- 2. Insertar Usuarios (Mínimo 5, incluyendo Admin y tu rol de Coordinador [cite: 39])
+-- 2. Insertar Usuarios (Mínimo 5, incluyendo Admin y tu rol de Coordinador)
 INSERT INTO usuarios (username, password, rol) VALUES 
 ('admin_master', 'admin123', 'Admin'),
 ('ana_coord', 'coord456', 'Coordinador'), -- Tu plus del 20%
@@ -12,7 +12,7 @@ INSERT INTO usuarios (username, password, rol) VALUES
 ('maria_g', 'user2', 'Cliente'),
 ('pedro_s', 'user3', 'Cliente');
 
--- 3. Insertar Productos (Mínimo 10 asociados a categorías [cite: 38])
+-- 3. Insertar Productos (Mínimo 10 asociados a categorías)
 -- Usaremos IDs 1, 2, 3 para las categorías creadas arriba
 INSERT INTO productos (nombre, descripcion, precio, categoria_id) VALUES 
 ('Monitor 24"', 'Monitor Full HD', 150.00, 1),
@@ -26,7 +26,7 @@ INSERT INTO productos (nombre, descripcion, precio, categoria_id) VALUES
 ('Jeans Slim', 'Denim azul', 30.00, 3),
 ('Polerón', 'Capucha gris', 25.00, 3);
 
--- 4. Insertar Stock inicial para cada producto [cite: 40]
+-- 4. Insertar Stock inicial para cada producto
 -- Relacionamos el producto_id con la cantidad
 INSERT INTO stock (producto_id, cantidad) VALUES 
 (1, 10), (2, 50), (3, 30), (4, 20), (5, 15), 

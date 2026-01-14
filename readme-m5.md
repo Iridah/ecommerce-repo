@@ -65,5 +65,5 @@ Para garantizar que las llaves foráneas se creen y vinculen correctamente, siga
 * Integridad de Datos: Uso de restricciones CHECK para evitar precios negativos y stock inconsistente.
 
 * Transaccionalidad: Implementación de BEGIN/COMMIT para asegurar que un pedido no se registre si el stock no se actualiza.
-_______________________________
-Módulo 5 - Bootcamp Academy
+___________________________________________________________________
+Módulo 5 - Bootcamp Academy - Diseñado por Inversiones Vacadari SpA.
